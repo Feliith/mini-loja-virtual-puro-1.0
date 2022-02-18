@@ -80,7 +80,7 @@ const quantProducts = document.querySelectorAll('.product-single')
 
 for (let c = 0 ; c < quantProducts.length ; c++) {
     leftButton[c].addEventListener('mouseenter', () => {
-        whiteBall[c].style.background = 'linear-gradient(90deg, #505050, transparent, transparent)'
+        whiteBall[c].style.background = 'linear-gradient(90deg, #808080, transparent, transparent)'
     })
     
     leftButton[c].addEventListener('mouseleave', () => {
@@ -88,7 +88,7 @@ for (let c = 0 ; c < quantProducts.length ; c++) {
     })
 
     rightButton[c].addEventListener('mouseenter', () => {
-        whiteBall[c].style.background = 'linear-gradient(-90deg, #505050, transparent, transparent)'
+        whiteBall[c].style.background = 'linear-gradient(-90deg, #808080, transparent, transparent)'
     })
     
     rightButton[c].addEventListener('mouseleave', () => {

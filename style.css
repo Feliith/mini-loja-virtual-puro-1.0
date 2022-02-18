@@ -54,10 +54,24 @@ h1 {
 
 .nav > a {
     transition: .3s;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .nav > a:hover {
-    transform: scale(.96);
+    border: 3px solid var(--standard-color);
+    border-radius: 50%;
+}
+
+.nav > a > img {
+    transition: .3s;
+}
+
+.nav > a:hover > img {
+    transform: scale(.6);
 }
 
 .nav-line {
@@ -79,6 +93,11 @@ h1 {
     justify-content: space-between;
     flex-direction: column;
     text-align: center;
+}
+
+.products-title {
+    margin-top: 40px;
+    margin-bottom: -60px;
 }
 
 .products-title > img {
@@ -137,7 +156,7 @@ h1 {
     left: 50%;
     transform: translateX(-50%);
     border-radius: 50%;
-    z-index: 6;
+    z-index: 2;
 }
 
 .slider-button {
