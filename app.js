@@ -9,7 +9,7 @@ const items = [
     {
         title: 'Moletom',
         price: 'R$69,99',
-        url: 'img/t-shirt-0',
+        url: 'img/sweatshirt-0',
         qnt: 0
     },
     {
@@ -21,10 +21,10 @@ const items = [
 ]
 
 const Store = () => {
-    const storeConteiner = document.querySelector('.store')
+    const productsConteiner = document.querySelector('.products')
 
     items.map((props, index) => {
-        storeConteiner.innerHTML += `
+        productsConteiner.innerHTML += `
             <div class="product-single">
                 <button class="slider-button left" onClick="leftBtn(${index})">
                     <img src="img/icons/arrows-left.png"/>
@@ -36,39 +36,65 @@ const Store = () => {
                     <div class="product-slider">
                         <span class="white-ball"></span>
                         <span class="white-ball-shadow"></span>
-                        <img src="${props.url + 1}.png" class="product-image"/>
-                        <img src="${props.url + 2}.png" class="product-image"/>
-                        <img src="${props.url + 3}.png" class="product-image"/>
+                        <img src="${props.url + 1}.png" class="product-image"></img>
+                        <img src="${props.url + 2}.png" class="product-image"></img>
+                        <img src="${props.url + 3}.png" class="product-image"></img>
                     </div>
                 </div>
                 <h3 class="product-name">${props.title} - ${props.price}</h3>
-                <button class="cart-btn">Adicionar ao carrinho</button>
+                <button key="${index}" class="cart-btn" onClick="getID(this)">Adicionar ao carrinho</button>
             </div>
         `
     })
 }
 Store()
 
+updateCart = () => {
+    const cartConteiner = document.querySelector('.cart')
+
+    cartConteiner.innerHTML = ''
+
+    items.map((props, index) => {
+        cartConteiner.innerHTML += `
+            <div class="single-conteiner-cart">
+                <div class="product-slider cart">
+                    <img src="${props.url + 1}.png" class="product-image cart"></img>
+                </div>
+                <h3 class="product-name">${props.title}  x${props.qnt}</h3>
+            </div>
+        `
+    })
+}
+
+getID = (btn) => {
+    let key = btn.getAttribute('key')
+    items[key].qnt++
+    updateCart()
+}
+
+
+
 const productSlider = document.querySelectorAll('.product-slider')
-let pos = 0
+
+let pos = [0, 1, 2]
 
 leftBtn = (id) => {
-    if (pos == 0) {
-        pos = 2
-        productSlider[id].style.marginLeft = `${-250 * pos}px`
+    if (pos[id] == 0) {
+        pos[id] = 2
+        productSlider[id].style.marginLeft = `${-250 * pos[id]}px`
     } else {
-        pos--
-        productSlider[id].style.marginLeft = `${-250 * pos}px`
+        pos[id]--
+        productSlider[id].style.marginLeft = `${-250 * pos[id]}px`
     }
 }
 
 rightBtn = (id) => {
-    if (pos == 2) {
-        pos = 0
-        productSlider[id].style.marginLeft = `${-250 * pos}px`
+    if (pos[id] == 2) {
+        pos[id] = 0
+        productSlider[id].style.marginLeft = `${-250 * pos[id]}px`
     } else {
-        pos++
-        productSlider[id].style.marginLeft = `${-250 * pos}px`
+        pos[id]++
+        productSlider[id].style.marginLeft = `${-250 * pos[id]}px`
     }
 }
 
@@ -80,7 +106,7 @@ const quantProducts = document.querySelectorAll('.product-single')
 
 for (let c = 0 ; c < quantProducts.length ; c++) {
     leftButton[c].addEventListener('mouseenter', () => {
-        whiteBall[c].style.background = 'linear-gradient(90deg, #808080, transparent, transparent)'
+        whiteBall[c].style.background = 'linear-gradient(90deg, #cfcece, transparent, transparent)'
     })
     
     leftButton[c].addEventListener('mouseleave', () => {
@@ -88,7 +114,7 @@ for (let c = 0 ; c < quantProducts.length ; c++) {
     })
 
     rightButton[c].addEventListener('mouseenter', () => {
-        whiteBall[c].style.background = 'linear-gradient(-90deg, #808080, transparent, transparent)'
+        whiteBall[c].style.background = 'linear-gradient(-90deg, #cfcece, transparent, transparent)'
     })
     
     rightButton[c].addEventListener('mouseleave', () => {
