@@ -55,15 +55,30 @@ updateCart = () => {
     cartConteiner.innerHTML = ''
 
     items.map((props, index) => {
-        cartConteiner.innerHTML += `
-            <div class="single-conteiner-cart">
-                <div class="product-slider cart">
-                    <img src="${props.url + 1}.png" class="product-image cart"></img>
+        if (props.qnt > 0) {
+            cartConteiner.innerHTML += `
+                <div class="single-conteiner-cart">
+                    <div class="product-cart">
+                        <img src="${props.url + (pos[index] + 1)}.png" class="product-image cart"></img>
+                    </div>
+                    <div>
+                        <h3 class="product-name">${props.title}  x${props.qnt}</h3>
+                        <h3 class="product-name">Cor: ${setColor(index)}</h3>
+                    </div>
                 </div>
-                <h3 class="product-name">${props.title}  x${props.qnt}</h3>
-            </div>
-        `
+            `
+        }
     })
+}
+
+setColor = (id) => {
+    if (pos[id] == 0) {
+        return 'Preto'
+    } else if (pos[id] == 1) {
+        return 'Verde'
+    } else {
+        return 'Vermelho'
+    }
 }
 
 getID = (btn) => {
@@ -76,7 +91,7 @@ getID = (btn) => {
 
 const productSlider = document.querySelectorAll('.product-slider')
 
-let pos = [0, 1, 2]
+let pos = [0 , 0, 0]
 
 leftBtn = (id) => {
     if (pos[id] == 0) {

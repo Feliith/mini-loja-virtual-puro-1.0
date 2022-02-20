@@ -62,16 +62,7 @@ h1 {
 }
 
 .nav > a:hover {
-    border: 3px solid var(--standard-color);
-    border-radius: 50%;
-}
-
-.nav > a > img {
-    transition: .3s;
-}
-
-.nav > a:hover > img {
-    transform: scale(.6);
+    transform: scale(.9);
 }
 
 .nav-line {
@@ -247,7 +238,7 @@ h1 {
     justify-content: space-around;
 }
 
-.product-slider.cart {
+.product-cart {
     background: #fff;
     width: 250px;
     height: 250px;
