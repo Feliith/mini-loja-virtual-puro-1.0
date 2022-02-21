@@ -74,6 +74,16 @@ getID = (id, price) => {
     items[id].qnt++
     totalPrice += price
     updateCart()
+    cartConfirm(id)
+}
+
+cartConfirm = (id) => {
+    const cartBtn = document.querySelectorAll('.cart-btn')
+    const confirmed = document.createElement('p')
+    confirmed.classList.add('confirmed-comment')
+    confirmed.textContent = 'Adicionado ao carrinho!'
+    confirmed.style.animation = 'fadeInOut 1.5s'
+    cartBtn[id].appendChild(confirmed)
 }
 
 productSub = (id, price) => {

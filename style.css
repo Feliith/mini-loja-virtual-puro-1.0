@@ -232,11 +232,13 @@ h3 {
     color: #fff;
     font-size: 20px;
     font-weight: 300;
+    text-align: center;
     width: 240px;
     height: 60px;
     cursor: pointer;
     border: none;
     border-radius: 50px;
+    position: relative;
     transition: .3s;
 }
 
@@ -245,6 +247,26 @@ h3 {
     transform: scale(.9);
 }
 
+.confirmed-comment {
+    color: var(--standard-color);
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    opacity: 0;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    } 50% {
+        opacity: 1;
+        transform: translateY(50px);
+    } 100% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+}
 
 .single-conteiner-cart {
     background: #121212;
