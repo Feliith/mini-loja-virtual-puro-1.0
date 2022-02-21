@@ -1,0 +1,257 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --standard-dark-color: #80bd5a;
+    --standard-color: #9be979;
+    --standard-light-color: ;
+
+    --contrast-color: #ff5b5b;
+    --contrast-light-color: #ff7a7a;
+    --contrast-lighter-color: #ffacac;
+
+    --dark-theme: #121212;
+    --dark-theme-02: #242424;
+
+    --font-01: #fff;
+    --font-02: #cfcece;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+svg {
+    background: var(--dark-theme-02);
+}
+
+h1 {
+    color: #fff;
+    font-weight: 400;
+    font-size: 5.5vh;
+}
+
+
+
+.nav {
+    background: var(--dark-theme);
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.nav > a {
+    transition: .3s;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav > a:hover {
+    transform: scale(.9);
+}
+
+.nav-line {
+    background: var(--standard-color);
+    position: absolute;
+    top: 77px;
+    width: 90%;
+    height: 3px;
+}
+
+
+
+.store {
+    background: var(--dark-theme);
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
+}
+
+.products-title {
+    margin-top: 60px;
+}
+
+.products-title > img {
+    width: 100px;
+}
+
+.products {
+    display: flex;
+}
+
+.product-single {
+    display: flex;
+    flex-direction: column;
+    margin: 40px 60px;
+    position: relative;
+    align-items: center;
+    text-align: center;
+}
+
+.slider {
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.product-slider {
+    width: 750px;
+    display: flex;
+    transition: .5s;
+}
+
+.product-image {
+    width: 250px;
+    height: 250px;
+    z-index: 5;
+    transform: scale(.6);
+}
+
+.white-ball {
+    background: #fff;
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.white-ball-shadow {
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    z-index: 2;
+    transition: .3s;
+}
+
+.slider-button {
+    background: none;
+    border: none;
+    border-radius: 50%;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 120px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.slider-button > img {
+    width: 40px;
+    transition: .3s;
+}
+
+.slider-button:hover > img {
+    transform: scale(.9);
+}
+
+.slider-button.left {
+    left: 22px;
+}
+
+.slider-button.right {
+    right: 22px;
+}
+
+.product-name {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 300;
+    margin: 16px;
+    width: 250px;
+}
+
+#cart {
+    background: var(--dark-theme-02);
+    min-height: 400px;
+    text-align: center;
+    margin-top: -10px;
+    padding-bottom: 40px;
+}
+
+.cart-title > img {
+    width: 100px;
+}
+
+.cart-title {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.cart-btn {
+    background: linear-gradient(45deg, var(--contrast-color), var(--contrast-lighter-color));
+    background-size: 150%;
+    background-position: left;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    width: 240px;
+    height: 60px;
+    cursor: pointer;
+    border: none;
+    border-radius: 50px;
+    transition: .3s;
+}
+
+.cart-btn:hover {
+    background-position: right;
+    transform: scale(.9);
+}
+
+
+.single-conteiner-cart {
+    background: #121212;
+    width: 100%;
+    height: 300px;
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.product-cart {
+    background: #fff;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    display: flex;
+}
+
+.products-title.cart {
+    color: #000;
+}
+
+@media screen and (max-width: 800px) {
+    .products {
+        display: block;
+    }
+}
