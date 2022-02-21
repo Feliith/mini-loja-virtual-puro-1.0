@@ -98,3 +98,22 @@ const totalPriceConteiner = document.querySelector('.total-price')
 const totalPriceSpan = document.querySelector('.total-price > span')
 
 let totalPrice = 0
+
+
+
+navScroll = () => {
+    const nav = document.querySelector('.nav')
+
+    window.onscroll = onScroll
+
+    function onScroll() {
+        if (window.scrollY < 200) {
+            nav.classList.remove('scroll')
+            nav.style.animation = ''
+        } else {
+            nav.classList.add('scroll')
+            nav.style.animation = 'navMove .5s'
+        }
+    }
+}
+navScroll()
