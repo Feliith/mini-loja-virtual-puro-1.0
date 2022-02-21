@@ -370,6 +370,19 @@ h3 {
 
 
 
+.footer {
+    background: var(--dark-theme-02);
+    text-align: center;
+    height: 40px;
+}
+
+.footer > a {
+    color: var(--standard-color);
+    text-decoration: none;
+}
+
+
+
 @media screen and (max-width: 800px) {
     .products {
         display: block;
