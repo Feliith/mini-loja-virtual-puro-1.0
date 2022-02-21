@@ -84,6 +84,9 @@ cartConfirm = (id) => {
     confirmed.textContent = 'Adicionado ao carrinho!'
     confirmed.style.animation = 'fadeInOut 1.5s'
     cartBtn[id].appendChild(confirmed)
+    setTimeout(() => {
+        cartBtn[id].removeChild(confirmed)
+    }, 1500)
 }
 
 productSub = (id, price) => {
